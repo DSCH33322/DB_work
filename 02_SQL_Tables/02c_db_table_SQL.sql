@@ -1,6 +1,6 @@
 /* --------- Strukturen ------- */
 /* Tabelle mit id als PRIMARY KEY --> Keine Dublikate moeglich
-AUTO */
+AUTO Increment  */
 
 /* DB boo löschen, falls vorhanden */
 DROP DATABASE IF EXISTS boo;
@@ -14,7 +14,7 @@ USE boo;
 
 CREATE TABLE IF NOT EXISTS boo.test
 (
-    id INT NOT NULL PRIMARY KEY,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(20) NOT NULL DEFAULT "TBA",
 	age INT NOT NULL DEFAULT 0
 
@@ -28,10 +28,10 @@ SHOW TABLES;
 DESCRIBE boo.test;
 
 /* ----- Daten ----- */
-INSERT INTO boo.test(id,name,age) VALUES (1,"Grizabella",29);
-INSERT INTO boo.test(id,name,age) VALUES (2,"Alonzo",35);
-INSERT INTO boo.test(id,name,age) VALUES (3,"Alonzo",31);
-INSERT INTO boo.test(id,name,age) VALUES (4,"Alonzo",25);
+INSERT INTO boo.test(name,age) VALUES ("Grizabella",29);
+INSERT INTO boo.test(name,age) VALUES ("Alonzo",35);
+INSERT INTO boo.test(name,age) VALUES ("Alonzo",31);
+INSERT INTO boo.test(name,age) VALUES ("Alonzo",25);
 
 
 
