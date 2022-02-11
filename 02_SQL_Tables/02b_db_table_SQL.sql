@@ -13,7 +13,7 @@ USE boo;
 
 CREATE TABLE IF NOT EXISTS boo.test
 (
-	name VARCHAR(20) NOT NULL DEFAULT "TBA",
+	name VARCHAR(20) NOT NULL UNIQUE DEFAULT "TBA",
 	age INT NOT NULL DEFAULT 0
 
 
@@ -32,7 +32,7 @@ INSERT INTO boo.test VALUES ();
 
 
 -- Doppelte Datensätze werden zugelassen --
-#INSERT INTO boo.test(age,name) VALUES (35,"Alonzo");
+INSERT INTO boo.test(age,name) VALUES (35,"Alonzo, der Coole!");
 
 /* Inhalte der Tabelle anzeigen */
 SELECT * FROM boo.test;
