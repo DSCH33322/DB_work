@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS boo.users
 DESCRIBE boo.users;
 
 /* Daten */
+/* Besser PWD´s verschlüsselt, zb: als SAH1-Hash */
 INSERT INTO 
     boo.users(user_Name,user_Pwd,family_Name,first_Name) 
 VALUES
@@ -27,6 +28,20 @@ VALUES
     ("maxine",SHA1("#7xD0"),"Mützerich","Maxine"),
     ("maxl",SHA1("user1234"),"Mützerich","Max")
 ;
+
+/* Inhalte : Ergebnistabelle */
+SELECT * FROM boo.users;
+
+/* Änderungen an bestehender Tabelle */
+ALTER TABLE
+    boo.users
+ADD
+    user_Plz INT(5) NOT NULL DEFAULT 00000 
+;
+
+/* Struktur*/
+DESCRIBE boo.users;
+
 /* Inhalte : Ergebnistabelle */
 SELECT * FROM boo.users;
 
