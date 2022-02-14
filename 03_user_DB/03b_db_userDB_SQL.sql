@@ -42,6 +42,10 @@ ADD
 /* Struktur*/
 DESCRIBE boo.users;
 
+
+UPDATE boo.users SET user_Plz = 70367 WHERE first_Name = "Max";
+
+
 /* Inhalte : Ergebnistabelle */
 SELECT * FROM boo.users;
 
