@@ -32,7 +32,7 @@ INSERT INTO boo.test(name,age) VALUES ("Grizabella",29);
 INSERT INTO boo.test(name,age) VALUES ("Alonzo",35);
 INSERT INTO boo.test(name,age) VALUES ("Alonzo",31);
 INSERT INTO boo.test(name,age) VALUES ("Alonzo",25);
-
+INSERT INTO boo.test(name,age) VALUES ("Maxine",25);
 
 
 /* Inhalte der Tabelle anzeigen */
