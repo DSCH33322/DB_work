@@ -44,7 +44,7 @@ DESCRIBE boo.users;
 
 
 UPDATE boo.users SET user_Plz = 70367 WHERE first_Name = "Max";
-
+UPDATE boo.users SET user_Plz = 70367 WHERE id = 2;
 
 /* Inhalte : Ergebnistabelle */
 SELECT * FROM boo.users;
