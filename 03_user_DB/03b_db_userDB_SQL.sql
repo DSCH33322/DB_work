@@ -23,9 +23,9 @@ DESCRIBE boo.users;
 INSERT INTO 
     boo.users(user_Name,user_Pwd,family_Name,first_Name) 
 VALUES
-    ("max","1234","Mütze","Max"),
-    ("maxine","#7xD0","Mützerich","Maxine"),
-    ("maxl","user1234","Mützerich","Max")
+    ("max",SHA1("1234"),"Mütze","Max"),
+    ("maxine",SHA1("#7xD0"),"Mützerich","Maxine"),
+    ("maxl",SHA1("user1234"),"Mützerich","Max")
 ;
 /* Inhalte : Ergebnistabelle */
 SELECT * FROM boo.users;
