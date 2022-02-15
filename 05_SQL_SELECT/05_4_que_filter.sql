@@ -12,7 +12,7 @@
 
 
 -- Scharfe Suche
-
+/*
 SELECT
     ticker AS "SYM",
     c_name AS "Unternehmen",
@@ -41,4 +41,38 @@ ORDER BY price DESC
 
 -- Begrenzung
 LIMIT 40
+;
+*/
+
+
+SELECT
+    ticker AS "SYM",
+    c_name AS "Unternehmen",
+    industry AS "Branche"
+FROM stocks.ccc
+
+-- scharfe Suche nach Strings
+#WHERE industry = "Media"
+
+-- unschärfere Suche --
+-- Branchenname beginnt mit ... , dahinter beliebige Chars
+#WHERE industry LIKE "Air%"
+-- Branchenname endet mit ... , davor beliebige Chars
+#WHERE industry LIKE "%ment"
+-- Branchenname enthaelt ...
+#WHERE industry LIKE "%ood%"
+
+-- Branchenname endet/beginnt mit ... , danach/davor/inmitten genau _ Char
+#WHERE industry LIKE "__dia"
+#WHERE industry LIKE "Med__"
+#WHERE industry LIKE "M___a"
+#WHERE industry LIKE "_ir%"
+#WHERE industry LIKE "_ood%"
+
+#WHERE industry LIKE "%ment"
+#WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment"
+WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment" AND industry NOT LIKE "%tain"
+
+ORDER BY industry ASC
+LIMIT 20
 ;
