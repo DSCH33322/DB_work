@@ -44,7 +44,7 @@ LIMIT 40
 ;
 */
 
-
+/*
 SELECT
     ticker AS "SYM",
     c_name AS "Unternehmen",
@@ -71,8 +71,25 @@ FROM stocks.ccc
 
 #WHERE industry LIKE "%ment"
 #WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment"
-WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment" AND industry NOT LIKE "%tain"
+#WHERE industry LIKE "%ment" AND industry NOT LIKE "%ipment" AND industry NOT LIKE "%tain"
 
 ORDER BY industry ASC
 LIMIT 20
+;
+
+*/
+
+-- Eingrenzen/Filtern WHERE & IN / NOT IN (Suchsets)
+
+SELECT
+	ticker AS "SYM",
+	c_name AS "Unternehmen",
+	sector AS "Sektor",
+	industry AS "Branche"
+FROM stocks.ccc
+#WHERE sector = "Financials"
+#WHERE sector = "Financials" AND industry NOT IN ("Insurance","Banks")
+WHERE industry IN ("Banks","Beverages")
+ORDER BY industry ASC
+LIMIT 400 -- X Zeilen ab 0
 ;
