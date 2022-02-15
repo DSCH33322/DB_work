@@ -79,6 +79,7 @@ LIMIT 20
 
 */
 
+/*
 -- Eingrenzen/Filtern WHERE & IN / NOT IN (Suchsets)
 
 SELECT
@@ -93,3 +94,14 @@ WHERE industry IN ("Banks","Beverages")
 ORDER BY industry ASC
 LIMIT 400 -- X Zeilen ab 0
 ;
+*/
+
+-- Eingrenzen/Filtern WHERE & RegEx
+
+SELECT
+	c_name "Unternehmen"
+FROM stocks.ccc
+#WHERE c_name RLIKE "^[AZ]" -- mit A oder Z beginnend
+WHERE c_name RLIKE "^[1-9]" -- mit Ziffer beginnend
+ORDER BY c_name;
+
