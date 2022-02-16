@@ -23,3 +23,23 @@ FROM stocks.ccc
 #ggf. Restriktionen
 LIMIT 10;
 */
+
+-- UPPER() --> alles in Großbuchstaben
+/*
+SELECT
+ticker AS "SYM",
+upper(c_name) "Unternehmen"
+FROM stocks.ccc
+#ggf. Restriktionen
+LIMIT 10;
+*/
+
+-- LOWER() --> alles in Kleinbuchstaben (zb. bei mail-Adressen)
+/*
+SELECT
+ticker AS "SYM",
+lower(c_name) "Unternehmen"
+FROM stocks.ccc
+#ggf. Restriktionen
+LIMIT 10;
+*/
