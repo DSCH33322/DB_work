@@ -43,3 +43,36 @@ FROM stocks.ccc
 #ggf. Restriktionen
 LIMIT 10;
 */
+
+
+-- LENGTH() / char_length()--> String-Laenge
+/*
+SELECT
+ticker SYM,
+c_name Unternehmen,
+concat("Ops: ",sector," : ",industry) Operation,
+#length(concat("Ops: ",sector,":",industry)) StrLen -- in Byte
+char_length(concat("Ops: ",sector,":",industry)) StrLen -- in Chars
+FROM stocks.ccc
+ORDER BY StrLen DESC
+LIMIT 20;
+*/
+
+
+-- REPLACE() --> Ersetzen von Stringanteilen
+/**/
+SELECT
+ticker AS "SYM",
+c_name "Unternehmen",
+#replace(c_name,"Inc.","Incorporated") AS "Incorporated"
+replace(c_name,"Corp.","Corporations") AS "Corporation"
+FROM stocks.ccc
+#WHERE c_name LIKE "%Inc."
+WHERE c_name LIKE "%Corp."
+LIMIT 20;
+
+-- TRIM() --> Trimmen vor/nach String (Whitespace) Siehe Link
+
+
+
+
